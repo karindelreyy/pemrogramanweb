@@ -1,8 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=<?php
+<?php
 declare(strict_types=1);
 $sudahLogin = true;
 $peran = 'admin';
@@ -22,10 +18,4 @@ $terverifikasi = true;
 $saldo = 120000;
 if ($sudahLogin && $terverifikasi && $saldo >= 100000) {
 echo "Transaksi besar diizinkan.\n";
-}, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
+}
