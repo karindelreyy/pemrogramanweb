@@ -39,4 +39,16 @@ class Item extends Model {
 
         return 'ITM' . str_pad((string) (($max ? (int)$max : 0) + 1), 4, '0', STR_PAD_LEFT);
     }
+
+    public function totalStock(): int {
+        return (int) $this->db->query(
+            "SELECT COALESCE(SUM(quantity), 0) FROM items"
+        )->fetchColumn();
+    }
+
+    public function totalValue(): float {
+        return (float) $this->db->query(
+            "SELECT COALESCE(SUM(quantity * price), 0) FROM items"
+        )->fetchColumn();
+    }
 }

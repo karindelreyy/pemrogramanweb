@@ -1,6 +1,10 @@
-<?php
+﻿<?php
 
 class CategoriesController extends Controller {
+    public function __construct() {
+        $this->requireLogin();
+    }
+
 
     public function index(): void {
         $this->view('categories/index', [

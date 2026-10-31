@@ -1,5 +1,9 @@
-<?php
+﻿<?php
 class ItemsController extends Controller {
+    public function __construct() {
+        $this->requireLogin();
+    }
+
 
     public function index(): void {
         $this->view('items/index', [
@@ -100,3 +104,4 @@ class ItemsController extends Controller {
         $this->redirect('items');
     }
 }
+

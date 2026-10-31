@@ -20,3 +20,42 @@ function take_flash(): ?array {
     unset($_SESSION['flash']);
     return $f;
 }
+
+function view_shared_data(): array {
+    $url = trim($_GET['url'] ?? 'home', '/');
+    $current = strtolower(explode('/', $url)[0] ?: 'home');
+
+    return [
+        'flash' => take_flash(),
+        'loggedIn' => Middleware::isLoggedIn(),
+        'user' => Middleware::user(),
+        'current' => $current,
+        'navItems' => [
+            'home' => [
+                'label' => 'Dashboard',
+                'icon' => 'speedometer2',
+                'url' => ''
+            ],
+            'items' => [
+                'label' => 'Barang',
+                'icon' => 'box',
+                'url' => 'items'
+            ],
+            'categories' => [
+                'label' => 'Kategori',
+                'icon' => 'tags',
+                'url' => 'categories'
+            ],
+            'transactions' => [
+                'label' => 'Transaksi',
+                'icon' => 'arrow-left-right',
+                'url' => 'transactions'
+            ],
+            'users' => [
+                'label' => 'Pengguna',
+                'icon' => 'people',
+                'url' => 'users'
+            ],
+        ],
+    ];
+}
