@@ -1,9 +1,8 @@
-
 <?php require ROOT_PATH . '/app/views/layouts/header.php'; ?>
 
 <h1><?= e($title ?? 'Data Kategori') ?></h1>
 
-<a href="<?= BASE_URL ?>/categories/create" class="btn btn-primary mb-3">
+<a href="<?= BASEURL ?>/categories/create" class="btn btn-primary mb-3">
     Tambah Kategori
 </a>
 
@@ -23,8 +22,14 @@
                 <td><?= e($category['name']) ?></td>
                 <td><?= e($category['description'] ?? '') ?></td>
                 <td>
-                    <a href="<?= BASE_URL ?>/categories/edit?id=<?= $category['id'] ?>"
+                    <a href="<?= BASEURL ?>/categories/edit/<?= $category['id'] ?>"
                        class="btn btn-warning btn-sm">Edit</a>
+
+                    <form action="<?= BASEURL ?>/categories/delete/<?= $category['id'] ?>"
+                          method="POST" class="d-inline"
+                          onsubmit="return confirm('Yakin ingin menghapus kategori ini?')">
+                        <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
+                    </form>
                 </td>
             </tr>
         <?php endforeach; ?>
