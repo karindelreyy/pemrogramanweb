@@ -1,6 +1,6 @@
-<?php
-class HomeController extends Controller {
-    public function index(): void {
-        $this->view('dashboard/index', ['title' => 'Dashboard']);
-    }
-}
+<?php require_once ROOT_PATH . '/app/views/layouts/header.php'; ?>
+
+<h1>Dashboard</h1>
+<p>Selamat datang di Sistem Inventaris Barang.</p>
+
+<?php require_once ROOT_PATH . '/app/views/layouts/footer.php'; ?>
