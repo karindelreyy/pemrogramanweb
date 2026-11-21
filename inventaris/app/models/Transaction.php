@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 class Transaction extends Model {
 
     public function create(array $data): bool {

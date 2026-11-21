@@ -1,4 +1,4 @@
-﻿<?php require ROOT_PATH . '/app/views/layouts/header.php'; ?>
+<?php require ROOT_PATH . '/app/views/layouts/header.php'; ?>
 
 <div class="d-flex justify-content-between align-items-center mb-4">
     <div>

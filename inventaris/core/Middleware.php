@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 class Middleware {
     public static function isLoggedIn(): bool {
         if (session_status() === PHP_SESSION_NONE) {

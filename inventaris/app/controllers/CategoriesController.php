@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 class CategoriesController extends Controller {
     public function __construct() {

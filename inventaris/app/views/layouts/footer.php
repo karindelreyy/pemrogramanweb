@@ -1,4 +1,4 @@
-﻿</main>
+</main>
 <footer class="text-center text-muted py-4 small">
     &copy; <?= date('Y') ?> <?= APP_NAME ?> &middot; Dibuat dengan PHP MVC
 </footer>
